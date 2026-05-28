@@ -1,0 +1,15 @@
+target/
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Playwright artifacts
+test-results/
+playwright-report/
+videos/
+traces/
+screenshots/
+
+# Local overrides
+src/test/resources/config.local.properties
