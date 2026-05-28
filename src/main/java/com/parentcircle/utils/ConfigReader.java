@@ -27,9 +27,25 @@ public final class ConfigReader {
         return PROPS.getProperty(key);
     }
 
-    public static String get(String key, String fallback) {
-        String v = get(key);
-        return (v == null || v.isBlank()) ? fallback : v;
+    // 1st - System property (-Dbase.url from Maven/Jenkins)
+// 2nd - config.properties file
+// 3rd - fallback default
+
+    public static String get(String key, String defaultValue) {
+        // First check system property (Jenkins -Dbase.url)
+        String sysProp = System.getProperty(key);
+        if (sysProp != null && !sysProp.isEmpty()) {
+            return sysProp;
+        }
+
+        // Then check config.properties
+        String configProp = PROPS.getProperty(key);
+        if (configProp != null && !configProp.isEmpty()) {
+            return configProp;
+        }
+
+        // Finally fallback
+        return defaultValue;
     }
 
     public static boolean getBool(String key, boolean fallback) {

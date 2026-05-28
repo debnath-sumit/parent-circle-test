@@ -29,7 +29,7 @@ public abstract class BaseTest {
     @BeforeEach
     void setUp() throws Exception {
         Files.createDirectories(TRACE_DIR);
-        baseUrl = ConfigReader.get("baseUrl", "http://localhost:3001/");
+        baseUrl = ConfigReader.get("baseUrl", "http://localhost:3001");
 
         playwright = Playwright.create();
         browser = PlaywrightFactory.launch(playwright);
