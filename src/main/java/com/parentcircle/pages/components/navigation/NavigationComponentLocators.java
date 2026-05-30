@@ -23,4 +23,10 @@ public class NavigationComponentLocators {
     public Locator signOutButton() {
         return page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Sign out"));
     }
+
+    public Locator profileLink() {
+        // exact=true: a non-exact "Profile" matches multiple links (strict-mode violation).
+        // Page-scoped, not nav()-scoped — the link sits outside the <nav> landmark.
+        return page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Profile").setExact(true));
+    }
 }

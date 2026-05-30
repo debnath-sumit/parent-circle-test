@@ -3,6 +3,7 @@ package com.parentcircle.pages.home;
 import com.microsoft.playwright.Page;
 import com.parentcircle.pages.BasePage;
 import com.parentcircle.pages.components.navigation.NavigationComponent;
+import com.parentcircle.pages.profile.ProfilePage;
 import com.parentcircle.pages.signin.SignInPage;
 
 /**
@@ -30,5 +31,10 @@ public class HomePage extends BasePage {
     public SignInPage goToSignIn() {
         navigation.clickSignIn();
         return new SignInPage(page);
+    }
+
+    public ProfilePage goToProfile() {
+        navigation.clickProfile();
+        return new ProfilePage(page);
     }
 }

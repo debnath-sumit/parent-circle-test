@@ -21,4 +21,8 @@ public class NavigationComponent {
     public void clickSignOut() {
         loc.signOutButton().click();
     }
+
+    public void clickProfile() {
+        loc.profileLink().click();
+    }
 }
