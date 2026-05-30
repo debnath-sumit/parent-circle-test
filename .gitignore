@@ -13,3 +13,6 @@ screenshots/
 
 # Local overrides
 src/test/resources/config.local.properties
+
+# Java practice scratch code (not part of the test suite)
+src/main/java/practices/
