@@ -31,6 +31,9 @@ public class ProfilePageLocators {
     public Locator addChildButton() {
         return page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Add child"));
     }
+    public Locator removeChildButton() {
+        return page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Remove"));
+    }
 
     /** The added child's entry in the children list, matched by name. */
     public Locator childEntry(String name) {

@@ -49,7 +49,7 @@ public abstract class BaseTest {
     @BeforeEach
     void setUp() throws Exception {
         Files.createDirectories(TRACE_DIR);
-        baseUrl = ConfigReader.get("base.url", "http://localhost:3001");
+        baseUrl = ConfigReader.get("base.url", "https://parent-circle.vercel.app/");
 
         playwright = Playwright.create();
         browser = PlaywrightFactory.launch(playwright);

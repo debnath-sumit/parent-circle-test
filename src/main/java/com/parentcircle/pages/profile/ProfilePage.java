@@ -25,4 +25,8 @@ public class ProfilePage extends BasePage {
         loc.dobInput().fill(dateOfBirth);
         loc.addChildButton().click();
     }
+
+    public void removeChild(String name) {
+        loc.childEntry(name).click();
+    }
 }

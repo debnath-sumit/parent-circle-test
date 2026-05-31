@@ -30,6 +30,7 @@ class AddChildTests extends BaseTest {
 
         // child was added to the list
         assertThat(profile.locators().childEntry(CHILD_NAME)).isVisible();
+        profile.removeChild(CHILD_NAME);
 
         // sign out and confirm we're signed out
         home.navigation().clickSignOut();
